@@ -1,8 +1,9 @@
 import Form from "@/components/Form";
+import TaskContainer from "@/components/TaskContainer";
 
 export default function Home() {
   return (
-    <div className="container h-screen">
+    <div className="container">
       <div className="row">
         <h1 className="h1 #B46558 text-center">
           <span className="gradient">To Do List App</span>
@@ -18,6 +19,7 @@ export default function Home() {
         </div>
       </div>
       <Form />
+      <TaskContainer/>
     </div>
   );
 }
