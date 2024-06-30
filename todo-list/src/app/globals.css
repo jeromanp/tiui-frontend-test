@@ -1,9 +1,15 @@
+/* Page HOME Styles */
 .h-screen {
   height: 100vh;
 }
 
-
-.bg-footer{
-  background: #191919;
+.gradient {
+  background: linear-gradient(to right, #b46558, #e0c385, #b46558);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
+/* Footer Styles */
+.bg-footer {
+  background: #191919;
+}
