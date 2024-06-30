@@ -13,7 +13,7 @@ export default function TaskContainer() {
             type="button"
             width={30}
             height={30}
-            className="me-2" // Clase para margen a la derecha
+            className="me-2"
           />
           <select
             className="form-select form-select-sm"
