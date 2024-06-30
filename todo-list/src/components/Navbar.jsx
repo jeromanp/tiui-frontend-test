@@ -14,6 +14,7 @@ export default function Navbar() {
           href="https://github.com/jeromanp/tiui-frontend-test"
           target="_blank"
           rel="noopener noreferrer"
+          className="text-decoration-none"
         >
           <button
             type="button"
