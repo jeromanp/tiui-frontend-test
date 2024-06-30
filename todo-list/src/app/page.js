@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className="container h-screen">
       <div className="row">
         <div className="h1">Add Bootstrap in Next.js</div>
       </div>
