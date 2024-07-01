@@ -3,12 +3,12 @@ import Image from "next/image";
 
 export default function TasksCard({ id, description, priority, completed, completeTask, deleteTask }) {
   return (
-    <tr className={`fw-normal ${completed ? "text-decoration-line-through text-danger" : ""} ${completed ? "bg-light" : ""}`}>
+    <tr className={`fw-normal ${completed ? "completed-task" : ""} ${completed ? "bg-light" : ""}`}>
       <td className="align-middle">
-        <span className={`${completed ? "fw-bold bg-secondary-subtle text-dark" : ""}`}>{id}</span>
+        <span className={`${completed ? "completed-task" : ""}`}>{id}</span>
       </td>
       <td className="align-middle">
-        <span className={`${completed ? "fw-bold bg-secondary-subtle text-dark" : ""}`}>{description}</span>
+        <span className={`${completed ? "completed-task" : ""}`}>{description}</span>
       </td>
       <td className="align-middle">
         <h6 className="mb-0">
