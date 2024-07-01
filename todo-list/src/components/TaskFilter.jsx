@@ -1,28 +1,29 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react";
+import Image from "next/image";
+import TaskTable from "./TaskTable";
 
-export default function TaskFilter() {
+export default function TaskFilter({ handleFilterChange }) {
   return (
     <div className="row d-flex justify-content-center align-items-center py-4 w-25">
-        <div className="d-flex align-items-center">
-          <Image
-            src="/assets/filter.svg"
-            alt="Filtrar"
-            type="button"
-            width={30}
-            height={30}
-            className="me-2"
-          />
-          <select
-            className="form-select form-select-sm"
-            aria-label="Default select example"
-          >
-            <option selected>Mostrar</option>
-            <option value="1">Todas</option>
-            <option value="2">Completadas</option>
-            <option value="3">Pendientes</option>
-          </select>
-        </div>
+      <div className="d-flex align-items-center">
+        <Image
+          src="/assets/filter.svg"
+          alt="Filtrar"
+          type="button"
+          width={30}
+          height={30}
+          className="me-2"
+        />
+        <select
+          className="form-select form-select-sm"
+          aria-label="Default select example"
+          onChange={handleFilterChange}
+        >
+          <option value="all">Mostrar Todas</option>
+          <option value="completed">Completadas</option>
+          <option value="pending">Pendientes</option>
+        </select>
       </div>
-  )
+    </div>
+  );
 }
