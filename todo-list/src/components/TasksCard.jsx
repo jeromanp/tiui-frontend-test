@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-export default function TasksCard({ num, task, priority }) {
+export default function TasksCard({ id, description, priority }) {
   return (
     <tr className="fw-normal">
       <th>
-        <span className="ms-2">{num}</span>
+        <span className="">{id}</span>
       </th>
       <td className="align-middle">
-        <span>{task}</span>
+        <span>{description}</span>
       </td>
       <td className="align-middle">
         <h6 className="mb-0">
