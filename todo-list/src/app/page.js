@@ -1,4 +1,3 @@
-import Form from "@/components/Form";
 import TaskContainer from "@/components/TaskContainer";
 
 export default function Home() {
@@ -18,8 +17,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <Form />
-      <TaskContainer/>
+      <TaskContainer />
     </div>
   );
 }
