@@ -1,10 +1,11 @@
 import React from "react";
-import TaskTable from "./TaskTable";
 import Image from "next/image";
+import Form from "./Form";
 
 export default function TaskContainer() {
   return (
     <div className="container">
+      <Form />
       <div className="row d-flex justify-content-center align-items-center py-4 w-25">
         <div className="d-flex align-items-center">
           <Image
@@ -26,7 +27,6 @@ export default function TaskContainer() {
           </select>
         </div>
       </div>
-      <TaskTable />
     </div>
   );
 }
