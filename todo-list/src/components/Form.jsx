@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import TaskTable from "./TaskTable";
+import TaskFilter from "./TaskFilter";
 
 export default function Form() {
   const [allTasks, setAllTasks] = useState([]);
@@ -107,6 +108,7 @@ export default function Form() {
           </button>
         </div>
       </form>
+      <TaskFilter/>
       <TaskTable tasks={allTasks} />
     </div>
   );
