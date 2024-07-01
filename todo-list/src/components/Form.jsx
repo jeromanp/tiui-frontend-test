@@ -12,8 +12,7 @@ export default function Form() {
     priority: "",
     completed: false,
   });
-
-  console.log(allTasks);
+  const [filter, setFilter] = useState("all")
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -71,9 +70,24 @@ export default function Form() {
   };
 
   const deleteTask = (id) => {
-    setAllTasks((prevTasks) => 
-      prevTasks.filter((task) => task.id !== id));
+    setAllTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
+
+  const filterTasks = (filter, tasks) => {
+    if (filter === "completed") {
+      return tasks.filter((task) => task.completed);
+    } else if (filter === "pending") {
+      return tasks.filter((task) => !task.completed);
+    } else {
+      return tasks;
+    }
+  };
+
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value);
+  };
+
+  const filteredTasks = filterTasks(filter, allTasks);  
 
   return (
     <div>
@@ -129,8 +143,13 @@ export default function Form() {
           </button>
         </div>
       </form>
-      <TaskFilter tasks={allTasks} />
-      <TaskTable tasks={allTasks} completeTask={completeTask} deleteTask={deleteTask} uncompleteTask={uncompleteTask} />
+      <TaskFilter handleFilterChange={handleFilterChange} />
+      <TaskTable
+        tasks={filteredTasks}
+        completeTask={completeTask}
+        deleteTask={deleteTask}
+        uncompleteTask={uncompleteTask}
+      />
     </div>
   );
 }
