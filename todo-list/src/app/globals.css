@@ -9,6 +9,16 @@
   color: transparent;
 }
 
+/* TableTask */
+.completed-task {
+  text-decoration:line-through;
+  color: dark;
+  background-color: #d1cbcb;
+  font-weight:normal;
+  transition: background-color 0.5s ease;
+}
+
+
 /* Footer Styles */
 .bg-footer {
   background: #191919;
