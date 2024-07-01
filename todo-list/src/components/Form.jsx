@@ -19,7 +19,7 @@ export default function Form() {
     const { name, value } = e.target;
     setTask((prevTask) => ({
       ...prevTask,
-      [name]: value,  
+      [name]: value,
     }));
   };
 
@@ -52,6 +52,14 @@ export default function Form() {
       priority: "",
       completed: false,
     });
+  };
+
+  const completeTask = (id) => {
+    setAllTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, completed: true } : task
+      )
+    );
   };
 
   return (
@@ -108,8 +116,8 @@ export default function Form() {
           </button>
         </div>
       </form>
-      <TaskFilter/>
-      <TaskTable tasks={allTasks} />
+      <TaskFilter tasks={allTasks} />
+      <TaskTable tasks={allTasks} completeTask={completeTask} />
     </div>
   );
 }
