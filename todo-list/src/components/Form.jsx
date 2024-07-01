@@ -62,6 +62,11 @@ export default function Form() {
     );
   };
 
+  const deleteTask = (id) => {
+    setAllTasks((prevTasks) => 
+      prevTasks.filter((task) => task.id !== id));
+  };
+
   return (
     <div>
       <form
@@ -117,7 +122,7 @@ export default function Form() {
         </div>
       </form>
       <TaskFilter tasks={allTasks} />
-      <TaskTable tasks={allTasks} completeTask={completeTask} />
+      <TaskTable tasks={allTasks} completeTask={completeTask} deleteTask={deleteTask} />
     </div>
   );
 }
