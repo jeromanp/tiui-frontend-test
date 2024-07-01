@@ -11,7 +11,7 @@ const taskList = {
   ],
 };
 
-export default function TaskTable({ tasks }) {
+export default function TaskTable({ tasks, completeTask }) {
   return (
     <div className="container h-100">
       <div className="row d-flex justify-content-center align-items-center h-100">
@@ -25,13 +25,8 @@ export default function TaskTable({ tasks }) {
             </tr>
           </thead>
           <tbody>
-            {tasks.map((task, index) => (
-              <TasksCard
-                key={index}
-                id={task.id}
-                description={task.description}
-                priority={task.priority}
-              />
+          {tasks.map((task) => (
+              <TasksCard key={task.id} {...task} completeTask={completeTask} />
             ))}
           </tbody>
         </table>
