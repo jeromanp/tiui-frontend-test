@@ -11,7 +11,7 @@ const taskList = {
   ],
 };
 
-export default function TaskTable({ tasks, completeTask }) {
+export default function TaskTable({ tasks, completeTask, deleteTask }) {
   return (
     <div className="container h-100">
       <div className="row d-flex justify-content-center align-items-center h-100">
@@ -25,8 +25,13 @@ export default function TaskTable({ tasks, completeTask }) {
             </tr>
           </thead>
           <tbody>
-          {tasks.map((task) => (
-              <TasksCard key={task.id} {...task} completeTask={completeTask} />
+            {tasks.map((task) => (
+              <TasksCard
+                key={task.id}
+                {...task}
+                completeTask={completeTask}
+                deleteTask={deleteTask}
+              />
             ))}
           </tbody>
         </table>
