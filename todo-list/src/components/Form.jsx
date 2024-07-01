@@ -62,6 +62,14 @@ export default function Form() {
     );
   };
 
+  const uncompleteTask = (id) => {
+    setAllTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, completed: false } : task
+      )
+    );
+  };
+
   const deleteTask = (id) => {
     setAllTasks((prevTasks) => 
       prevTasks.filter((task) => task.id !== id));
@@ -122,7 +130,7 @@ export default function Form() {
         </div>
       </form>
       <TaskFilter tasks={allTasks} />
-      <TaskTable tasks={allTasks} completeTask={completeTask} deleteTask={deleteTask} />
+      <TaskTable tasks={allTasks} completeTask={completeTask} deleteTask={deleteTask} uncompleteTask={uncompleteTask} />
     </div>
   );
 }
