@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-export default function TasksCard({ id, description, priority, completed, completeTask }) {
+export default function TasksCard({ id, description, priority, completed, completeTask, deleteTask }) {
   return (
     <tr className={`fw-normal ${completed ? "text-decoration-line-through text-danger" : ""} ${completed ? "bg-light" : ""}`}>
       <td className="align-middle">
@@ -51,7 +51,7 @@ export default function TasksCard({ id, description, priority, completed, comple
               className="text-white"
             />
           </button>
-          <button title="Eliminar" className="btn btn-danger">
+          <button title="Eliminar" onClick={() => deleteTask(id)} className="btn btn-danger">
             <Image
               src="/assets/delete.svg"
               alt="Delete"
