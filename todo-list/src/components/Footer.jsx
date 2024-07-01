@@ -14,7 +14,7 @@ export default function Footer() {
             <span className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-device-imac-code"
+                className="icon icon-tabler icon-tabler-device-imac-code"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
