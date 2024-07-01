@@ -14,18 +14,18 @@ export default function TasksCard({ id, description, priority }) {
         <h6 className="mb-0">
           <span
             className={`badge ${
-              priority === "alta"
+              priority === "Alta"
                 ? "bg-danger"
-                : priority === "media"
+                : priority === "Media"
                 ? "bg-warning"
                 : "bg-success"
             }`}
           >
-            {priority === "alta"
-              ? "High priority"
-              : priority === "media"
-              ? "Medium priority"
-              : "Low priority"}
+            {priority === "Alta"
+              ? "Urgente"
+              : priority === "Media"
+              ? "Importante"
+              : "Opcional"}
           </span>
         </h6>
       </td>
