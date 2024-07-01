@@ -11,7 +11,7 @@ const taskList = {
   ],
 };
 
-export default function TaskTable({ tasks, completeTask, deleteTask }) {
+export default function TaskTable({ tasks, completeTask, deleteTask, uncompleteTask }) {
   return (
     <div className="container h-100">
       <div className="row d-flex justify-content-center align-items-center h-100">
@@ -31,6 +31,7 @@ export default function TaskTable({ tasks, completeTask, deleteTask }) {
                 {...task}
                 completeTask={completeTask}
                 deleteTask={deleteTask}
+                uncompleteTask={uncompleteTask}
               />
             ))}
           </tbody>

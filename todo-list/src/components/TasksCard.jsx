@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-export default function TasksCard({ id, description, priority, completed, completeTask, deleteTask }) {
+export default function TasksCard({ id, description, priority, completed, completeTask, deleteTask, uncompleteTask }) {
   return (
     <tr className={`fw-normal ${completed ? "completed-task" : ""} ${completed ? "bg-light" : ""}`}>
       <td className="align-middle">
@@ -41,16 +41,29 @@ export default function TasksCard({ id, description, priority, completed, comple
               className="text-white"
             />
           </button>
-          <button title="Hecho" onClick={() => completeTask(id)} className="btn btn-success">
-            <Image
-              src="/assets/success.svg"
-              alt="Complete"
-              type="button"
-              width={30}
-              height={30}
-              className="text-white"
-            />
-          </button>
+          {completed ? (
+            <button title="Deshacer" onClick={() => uncompleteTask(id)} className="btn btn-warning">
+              <Image
+                src="/assets/incomplete.svg"
+                alt="Incomplete"
+                type="button"
+                width={30}
+                height={30}
+                className="text-white"
+              />
+            </button>
+          ) : (
+            <button title="Hecho" onClick={() => completeTask(id)} className="btn btn-success">
+              <Image
+                src="/assets/success.svg"
+                alt="Complete"
+                type="button"
+                width={30}
+                height={30}
+                className="text-white"
+              />
+            </button>
+          )}
           <button title="Eliminar" onClick={() => deleteTask(id)} className="btn btn-danger">
             <Image
               src="/assets/delete.svg"
