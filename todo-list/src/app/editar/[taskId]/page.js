@@ -82,7 +82,7 @@ export default function EditTaskPage() {
           <button
             type="submit"
             title="Actualizar"
-            className="btn btn-light btn-sm"
+            className="btn btn-icon btn-info"
           >
             <Image
               src="/assets/update.svg"
