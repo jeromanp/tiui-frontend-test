@@ -15,6 +15,7 @@ export default function TaskFilter({ handleFilterChange }) {
           className="me-2"
         />
         <select
+          title="Filtrar Tareas"
           className="form-select form-select-sm"
           aria-label="Default select example"
           onChange={handleFilterChange}
