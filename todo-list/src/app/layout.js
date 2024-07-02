@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { TasksProvider } from "./context/TaskContext";
+import { TasksProvider } from "../context/TaskContext";
 
 export const metadata = {
   title: "RoPi ToDo List",
