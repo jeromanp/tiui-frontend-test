@@ -99,3 +99,4 @@ Te mostrará la opción de visualizarla en una ventana del navegador, por defect
 - El poder refrescar la página sin perder los datos mostrados es una ventaja que se ofrece de este sitio.
 
 - Usar un framework moderno como lo es Next.js que hoy en día esta incrementando la comunidad.
+- Visita el deploy:  <b>[RoPi ToDo List](https://todo-list-99qk.vercel.app/)
