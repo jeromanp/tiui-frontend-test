@@ -4,6 +4,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import TasksContext from "@/context/TaskContext";
 
 export default function EditTaskPage() {
@@ -13,9 +14,9 @@ export default function EditTaskPage() {
   const { allTasks, updateTask } = useContext(TasksContext);
 
   const [task, setTask] = useState({
-    id: '',
-    description: '',
-    priority: '',
+    id: "",
+    description: "",
+    priority: "",
     completed: false,
   });
 
@@ -39,11 +40,18 @@ export default function EditTaskPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateTask(task);
-    router.push('/');
+    router.push("/");
   };
 
   return (
     <div className="container h-screen pt-5">
+      <div className="py-3">
+        <Link href="/">
+          <button type="button" class="btn btn-secondary">
+            Regresar
+          </button>
+        </Link>
+      </div>
       <h3>Editar Tarea {taskId}</h3>
       <form
         className="container d-flex justify-content-center align-items-center pt-5"
@@ -71,7 +79,11 @@ export default function EditTaskPage() {
             <option value="Media">Media</option>
             <option value="Baja">Baja</option>
           </select>
-          <button type="submit" title="Actualizar" className="btn btn-light btn-sm">
+          <button
+            type="submit"
+            title="Actualizar"
+            className="btn btn-light btn-sm"
+          >
             <Image
               src="/assets/update.svg"
               alt="Update"
@@ -80,7 +92,7 @@ export default function EditTaskPage() {
               height={30}
               className=""
             />
-          </button>          
+          </button>
         </div>
       </form>
     </div>
