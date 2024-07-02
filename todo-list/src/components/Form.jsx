@@ -117,6 +117,7 @@ export default function Form() {
         onSubmit={handleSubmit}
       >
         <input
+          title="Actividad a realizar"
           type="text"
           name="description"
           value={task.description}
@@ -127,6 +128,7 @@ export default function Form() {
         />
         <div className="d-flex gap-2">
           <select
+            title="Prioridad de la tarea"
             name="priority"
             value={task.priority}
             onChange={handleChange}
@@ -138,7 +140,11 @@ export default function Form() {
             <option value="Media">Media</option>
             <option value="Baja">Baja</option>
           </select>
-          <button type="submit" className="btn btn-light btn-sm">
+          <button
+            title="Agregar tarea"
+            type="submit"
+            className="btn btn-light btn-sm"
+          >
             <Image
               src="/assets/add.svg"
               alt="Add"
@@ -149,6 +155,7 @@ export default function Form() {
             />
           </button>
           <button
+            title="Limpiar"
             type="button"
             className="btn btn-light btn-sm"
             onClick={handleClear}
