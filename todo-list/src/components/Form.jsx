@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import TaskTable from "./TaskTable";
 import TaskFilter from "./TaskFilter";
@@ -12,7 +12,20 @@ export default function Form() {
     priority: "",
     completed: false,
   });
-  const [filter, setFilter] = useState("all")
+  const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedTasks = localStorage.getItem("allTasks");
+      setAllTasks(storedTasks ? JSON.parse(storedTasks) : []);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("allTasks", JSON.stringify(allTasks));
+    }
+  }, [allTasks, loading]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -87,8 +100,8 @@ export default function Form() {
     setFilter(e.target.value);
   };
 
-  const filteredTasks = filterTasks(filter, allTasks);  
-
+  const filteredTasks = filterTasks(filter, allTasks);
+  
   return (
     <div>
       <form
