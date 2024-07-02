@@ -12,8 +12,7 @@ export default function Home() {
       <div className="row">
         <div className="col-12">
           <p className="h5 d-flex justify-content-center py-4">
-            Utiliza esta aplicación para crear una lista de tareas por hacer en
-            tu día a día.
+            Utiliza esta aplicación para crear actividades de tu día a día.
           </p>
         </div>
       </div>
