@@ -1,14 +1,29 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function TasksCard({ id, description, priority, completed, completeTask, deleteTask, uncompleteTask }) {
+export default function TasksCard({
+  id,
+  description,
+  priority,
+  completed,
+  completeTask,
+  deleteTask,
+  uncompleteTask,
+}) {
   return (
-    <tr className={`fw-normal ${completed ? "completed-task" : ""} ${completed ? "bg-light" : ""}`}>
+    <tr
+      className={`fw-normal ${completed ? "completed-task" : ""} ${
+        completed ? "bg-light" : ""
+      }`}
+    >
       <td className="align-middle">
         <span className={`${completed ? "completed-task" : ""}`}>{id}</span>
       </td>
       <td className="align-middle">
-        <span className={`${completed ? "completed-task" : ""}`}>{description}</span>
+        <span className={`${completed ? "completed-task" : ""}`}>
+          {description}
+        </span>
       </td>
       <td className="align-middle">
         <h6 className="mb-0">
@@ -31,18 +46,24 @@ export default function TasksCard({ id, description, priority, completed, comple
       </td>
       <td className="align-middle">
         <div className="d-flex gap-2">
-          <button title="Actualizar" className="btn btn-info">
-            <Image
-              src="/assets/update.svg"
-              alt="Update"
-              type="button"
-              width={30}
-              height={30}
-              className="text-white"
-            />
-          </button>
+          <Link href={`/editar/${id}`}>
+            <button title="Actualizar" className="btn btn-info">
+              <Image
+                src="/assets/update.svg"
+                alt="Update"
+                type="button"
+                width={30}
+                height={30}
+                className="text-white"
+              />
+            </button>
+          </Link>
           {completed ? (
-            <button title="Deshacer" onClick={() => uncompleteTask(id)} className="btn btn-warning">
+            <button
+              title="Deshacer"
+              onClick={() => uncompleteTask(id)}
+              className="btn btn-warning"
+            >
               <Image
                 src="/assets/incomplete.svg"
                 alt="Incomplete"
@@ -53,7 +74,11 @@ export default function TasksCard({ id, description, priority, completed, comple
               />
             </button>
           ) : (
-            <button title="Hecho" onClick={() => completeTask(id)} className="btn btn-success">
+            <button
+              title="Hecho"
+              onClick={() => completeTask(id)}
+              className="btn btn-success"
+            >
               <Image
                 src="/assets/success.svg"
                 alt="Complete"
@@ -64,7 +89,11 @@ export default function TasksCard({ id, description, priority, completed, comple
               />
             </button>
           )}
-          <button title="Eliminar" onClick={() => deleteTask(id)} className="btn btn-danger">
+          <button
+            title="Eliminar"
+            onClick={() => deleteTask(id)}
+            className="btn btn-danger"
+          >
             <Image
               src="/assets/delete.svg"
               alt="Delete"
