@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import TaskTable from "./TaskTable";
 import TaskFilter from "./TaskFilter";
+import Loading from "./Loading";
 
 export default function Form() {
   const [allTasks, setAllTasks] = useState([]);
@@ -13,16 +14,18 @@ export default function Form() {
     completed: false,
   });
   const [filter, setFilter] = useState("all");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedTasks = localStorage.getItem("allTasks");
       setAllTasks(storedTasks ? JSON.parse(storedTasks) : []);
+      setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (!loading && typeof window !== "undefined") {
       localStorage.setItem("allTasks", JSON.stringify(allTasks));
     }
   }, [allTasks, loading]);
@@ -101,7 +104,11 @@ export default function Form() {
   };
 
   const filteredTasks = filterTasks(filter, allTasks);
-  
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div>
       <form
