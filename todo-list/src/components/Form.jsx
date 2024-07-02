@@ -143,7 +143,7 @@ export default function Form() {
           <button
             title="Agregar tarea"
             type="submit"
-            className="btn btn-light btn-sm"
+            className="btn btn-icon btn-add"
           >
             <Image
               src="/assets/add.svg"
@@ -151,13 +151,13 @@ export default function Form() {
               type="button"
               width={30}
               height={30}
-              className=""
+              className="icon"
             />
           </button>
           <button
             title="Limpiar"
             type="button"
-            className="btn btn-light btn-sm"
+            className="btn btn-icon btn-clear"
             onClick={handleClear}
           >
             <Image
@@ -166,7 +166,7 @@ export default function Form() {
               type="button"
               width={30}
               height={30}
-              className=""
+              className="icon"
             />
           </button>
         </div>

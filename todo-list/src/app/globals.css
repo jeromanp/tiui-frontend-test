@@ -24,6 +24,10 @@
   padding: 0;
 }
 
+.icon:hover {
+  scale: 1.25;
+}
+
 .btn-icon .icon {
   background-color: transparent;
 }
@@ -46,6 +50,16 @@
 .btn-danger .icon {
   filter: invert(62%) sepia(91%) saturate(4105%) hue-rotate(349deg)
     brightness(94%) contrast(101%);
+}
+
+.btn-add .icon {
+  filter: invert(23%) sepia(91%) saturate(7352%) hue-rotate(100deg)
+    brightness(92%) contrast(91%);
+}
+
+.btn-clear .icon {
+  filter: invert(53%) sepia(12%) saturate(576%) hue-rotate(175deg)
+    brightness(85%) contrast(86%);
 }
 
 /* Footer Styles */
