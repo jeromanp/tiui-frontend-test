@@ -11,13 +11,42 @@
 
 /* TableTask */
 .completed-task {
-  text-decoration:line-through;
+  text-decoration: line-through;
   color: dark;
   background-color: #d1cbcb;
-  font-weight:normal;
+  font-weight: normal;
   transition: background-color 0.5s ease;
 }
 
+.btn-icon {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.btn-icon .icon {
+  background-color: transparent;
+}
+
+.btn-info .icon {
+  filter: invert(20%) sepia(83%) saturate(1478%) hue-rotate(171deg)
+    brightness(92%) contrast(88%);
+}
+
+.btn-warning .icon {
+  filter: invert(30%) sepia(80%) saturate(354%) hue-rotate(359deg)
+    brightness(95%) contrast(92%);
+}
+
+.btn-success .icon {
+  filter: invert(72%) sepia(66%) saturate(325%) hue-rotate(90deg)
+    brightness(85%) contrast(80%);
+}
+
+.btn-danger .icon {
+  filter: invert(62%) sepia(91%) saturate(4105%) hue-rotate(349deg)
+    brightness(94%) contrast(101%);
+}
 
 /* Footer Styles */
 .bg-footer {
