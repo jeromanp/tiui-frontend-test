@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import { TasksProvider } from "./context/TaskContext";
 
 export const metadata = {
   title: "RoPi ToDo List",
@@ -14,13 +14,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body>
-        <header>
-          <Navbar />
-        </header>
-        <main>{children}</main>
-        <footer>
-          <Footer/>
-        </footer>
+        <TasksProvider>
+          <header>
+            <Navbar />
+          </header>
+          <main>{children}</main>
+          <footer>
+            <Footer />
+          </footer>
+        </TasksProvider>
       </body>
     </html>
   );
