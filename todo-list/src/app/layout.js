@@ -14,10 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
+      <head>
+        <link rel="icon" href="/logo.png" />
+      </head>
       <body>
-        <head>
-          <link rel="icon" href="/logo.png" />
-        </head>
         <TasksProvider>
           <header>
             <Navbar />
