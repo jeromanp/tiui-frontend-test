@@ -1,15 +1,22 @@
 import React from "react";
 import TasksCard from "./TasksCard";
 
-export default function TaskTable({ tasks, completeTask, deleteTask, uncompleteTask }) {
+export default function TaskTable({
+  tasks,
+  completeTask,
+  deleteTask,
+  uncompleteTask,
+}) {
   return (
     <div className="container h-100">
       <div className="row d-flex justify-content-center align-items-center h-100">
-        <table className="table text-white mb-0">
+        <table className="table text-white mb-0 w-100">
           <thead>
             <tr>
               <th scope="col">ID</th>
-              <th scope="col">Tarea</th>
+              <th className="w-100" scope="col">
+                Tarea
+              </th>
               <th scope="col">Prioridad</th>
               <th scope="col">Acciones</th>
             </tr>
