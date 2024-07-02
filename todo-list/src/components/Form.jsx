@@ -1,12 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import TaskTable from "./TaskTable";
 import TaskFilter from "./TaskFilter";
 import Loading from "./Loading";
+import TasksContext from "@/context/TaskContext";
 
 export default function Form() {
-  const [allTasks, setAllTasks] = useState([]);
+  const { allTasks, setAllTasks } = useContext(TasksContext);
   const [task, setTask] = useState({
     id: 1,
     description: "",
