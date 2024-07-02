@@ -1,13 +1,20 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
-    // <!-- Just an image -->
     <div className="container">
       <nav className="d-flex justify-content-between align-items-center">
         <Link href="/">
-          <img src="logo.png" alt="Logo" className="w-25" />
+          <Image
+            src="/logo.png"
+            alt="Update"
+            type="button"
+            width={150}
+            height={150}
+            className="text-white"
+          />
         </Link>
 
         <Link
