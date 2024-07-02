@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section class="py-3 py-md-5  d-flex justify-content-center align-items-center">
+    <section class="py-3 py-md-5  d-flex justify-content-center align-items-center h-screen">
       <div class="container">
         <div class="row">
           <div class="col-12">
